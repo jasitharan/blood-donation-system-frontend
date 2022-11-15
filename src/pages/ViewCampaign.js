@@ -67,6 +67,7 @@ const ViewCampaign = () => {
           <th>Date</th>
           <th>Time</th>
           <th>Status</th>
+          <th>Donation Count</th>
           <th></th>
           <th></th>
         </tr>
@@ -81,6 +82,7 @@ const ViewCampaign = () => {
               <td>{dateFormat(campaign.date, "yyyy-mm-dd")}</td>
               <td>{campaign.time}</td>
               <td>{campaign.status}</td>
+              <td>{campaign.donation_count}</td>
               <td><button onClick={() => {
                 onDelete(campaign.campaign_id);
               }}>Delete</button></td>
