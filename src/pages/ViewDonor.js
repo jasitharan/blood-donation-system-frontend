@@ -10,7 +10,7 @@ const ViewDonor = () => {
   const [donors, setDonors] = useState([]);
 
   const getAllDonors = async () => {
-    const res = await axios.get("http://localhost:8082/donors/getDonors");
+    const res = await axios.get("http://bds-1974701998.us-east-2.elb.amazonaws.com:8082/donors/getDonors");
     setDonors(res.data);
 
   };

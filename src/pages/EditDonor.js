@@ -9,7 +9,7 @@ const EditDonor = () => {
   console.log(donor);
 
   const [inputs, setInputs] = useState({
-    id: donor.id,
+    id: donor.donor_id,
     national_id: donor.national_id,
     donor_id: donor.donor_id,
     name: donor.name,
@@ -36,7 +36,7 @@ const EditDonor = () => {
       const headers = {
         "Content-Type": "application/json",
       };
-      var res = await axios.put(`http://localhost:8082/donors/updateDonor/${inputs.id}`,
+      var res = await axios.put(`http://bds-1974701998.us-east-2.elb.amazonaws.com:8082/donors/updateDonor/${inputs.id}`,
         inputs,
         { headers }
       );
@@ -57,7 +57,7 @@ const EditDonor = () => {
     padding: '1em'
   }
 
-   const styles = {
+  const styles = {
     title: {
       textAlign: "center",
       backgroundColor: "#ab2830",
@@ -103,11 +103,11 @@ const EditDonor = () => {
           value={inputs.national_id}
           readOnly
         />
-     
-        <label style={{textAlign: 'right', padding: "10px", fontWeight: 700 }}>Donor name:</label>
+
+        <label style={{ textAlign: 'right', padding: "10px", fontWeight: 700 }}>Donor name:</label>
         <input style={inputStyle} type="text" name="name" value={inputs.name} readOnly />
-        
-        <label style={{textAlign: 'right', padding: "10px", fontWeight: 700 }}>Donor Date of birth:</label>
+
+        <label style={{ textAlign: 'right', padding: "10px", fontWeight: 700 }}>Donor Date of birth:</label>
         <input
           style={inputStyle}
           type="text"
@@ -115,10 +115,10 @@ const EditDonor = () => {
           value={dateFormat(inputs.dob, "yyyy-mm-dd")}
           readOnly
         />
-        
+
         <label style={{ textAlign: 'right', padding: "10px", fontWeight: 700 }}>Gender:</label>
         <input style={inputStyle} type="text" name="gender" value={inputs.gender} readOnly />
-        
+
         <label style={{ textAlign: 'right', padding: "10px", fontWeight: 700 }}>Address:</label>
         <input
           style={inputStyle}
@@ -127,7 +127,7 @@ const EditDonor = () => {
           value={inputs.address}
           onChange={handleChange}
         />
-        
+
         <label style={{ textAlign: 'right', padding: "10px", fontWeight: 700 }}>District:</label>
         <input
           style={inputStyle}
@@ -136,7 +136,7 @@ const EditDonor = () => {
           value={inputs.district}
           onChange={handleChange}
         />
-        
+
         <label style={{ textAlign: 'right', padding: "10px", fontWeight: 700 }}>Telephone number:</label>
         <input
           style={inputStyle}
@@ -145,7 +145,7 @@ const EditDonor = () => {
           value={inputs.telephone_number}
           onChange={handleChange}
         />
-        
+
         <label style={{ textAlign: 'right', padding: "10px", fontWeight: 700 }}>Blood group:</label>
         <input
           style={inputStyle}
@@ -154,7 +154,7 @@ const EditDonor = () => {
           value={inputs.blood_group}
           readOnly
         />
-        
+
         <label style={{ textAlign: 'right', padding: "10px", fontWeight: 700 }}>Last donation Date:</label>
         <input
           style={inputStyle}
@@ -164,27 +164,27 @@ const EditDonor = () => {
             dateFormat(inputs.last_donation_date, "yyyy-mm-dd")}
           onChange={handleChange}
         />
-        
+
         <label style={{ textAlign: 'right', padding: "10px", fontWeight: 700 }}>Donor Weight:</label>
-        <input  
+        <input
           style={inputStyle}
           type="number"
           name="weight"
           value={inputs.weight}
           onChange={handleChange}
         />
-       
+
         <label style={{ textAlign: 'right', padding: "10px", fontWeight: 700 }}>Haemoglobin Level:</label>
-        <input 
+        <input
           style={inputStyle}
           type="text"
           name="hemoglobin_level"
           value={inputs.hemoglobin_level}
           onChange={handleChange}
         />
-       
-       <label></label>
-       <input style={styles.button} type="submit" value="Submit" />
+
+        <label></label>
+        <input style={styles.button} type="submit" value="Submit" />
       </form>
     </div>
   );

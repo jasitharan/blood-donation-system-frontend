@@ -7,7 +7,7 @@ const ViewDonation = () => {
   const [donations, setDonations] = useState([]);
 
   const getAllDonations = async () => {
-    const res = await axios.get("http://localhost:8081/donations/getDonations");
+    const res = await axios.get("http://bds-1974701998.us-east-2.elb.amazonaws.com:8081/donations/getDonations");
     setDonations(res.data);
   };
 

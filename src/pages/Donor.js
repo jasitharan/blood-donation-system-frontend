@@ -32,7 +32,7 @@ const Donor = () => {
         "Content-Type": "application/json",
       };
       var res = await axios.post(
-        "http://localhost:8082/donors/addDonor",
+        "http://bds-1974701998.us-east-2.elb.amazonaws.com:8082/donors/addDonor",
         inputs,
         { headers }
       );

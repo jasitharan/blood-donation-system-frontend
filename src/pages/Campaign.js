@@ -23,7 +23,7 @@ const Campaign = () => {
         "Content-Type": "application/json",
       };
       var res = await axios.post(
-        "http://localhost:8080/campaigns/addCampaign",
+        "http://bds-1974701998.us-east-2.elb.amazonaws.com:8080/campaigns/addCampaign",
         inputs,
         { headers }
       );

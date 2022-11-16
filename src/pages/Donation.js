@@ -21,7 +21,7 @@ const Donation = () => {
       const headers = {
         "Content-Type": "application/json",
       };
-      await axios.post("http://localhost:8081/donations/addDonation", inputs, {
+      await axios.post("http://bds-1974701998.us-east-2.elb.amazonaws.com:8081/donations/addDonation", inputs, {
         headers,
       });
     } catch (error) {

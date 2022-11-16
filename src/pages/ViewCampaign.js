@@ -10,7 +10,7 @@ const ViewCampaign = () => {
   const [campaigns, setCampaigns] = useState([]);
 
   const getAllCampaigns = async () => {
-    const res = await axios.get("http://localhost:8080/campaigns/getCampaign");
+    const res = await axios.get("http://bds-1974701998.us-east-2.elb.amazonaws.com:8080/campaigns/getCampaign");
     setCampaigns(res.data);
   };
 
@@ -40,7 +40,7 @@ const ViewCampaign = () => {
   const onDelete = async (id) => {
     const result = await confirm("Are you sure to Delete?", options);
     if (result) {
-      axios.delete(`http://localhost:8080/campaigns/deleteCampaign/${id}`)
+      axios.delete(`http://bds-1974701998.us-east-2.elb.amazonaws.com:8080/campaigns/deleteCampaign/${id}`)
     }
     alert("Deleted successfully");
     window.location.reload();
